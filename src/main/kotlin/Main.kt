@@ -1,5 +1,23 @@
 fun main(args: Array<String>) {
 
+    val draven = VampireKing("Draven")
+    println(draven)
+    draven.lives = 0
+    do {
+        if (draven.dodges()) {
+            draven.lives +=1
+            continue
+        }
+        if (draven.runAway()) {
+            println("Draven ran away")
+            break
+        } else {
+            draven.takeDamage(80)
+        }
+    }while(draven.lives > 0)
+    println("=====================================")
+}
+
 //    val enemy = Enemy ("Dracula", 10,3)
 //    println(enemy)
 //
@@ -23,24 +41,24 @@ fun main(args: Array<String>) {
 //    vlad.takeDamage(8)
 //    println(vlad)
 //
-    for (i in 1..10){
-        val draven = VampireKing("Draven")
-        println(draven)
-
-        while(draven.lives > 0) {
-            if(draven.dodges()){
-                continue
-            }
-            if(draven.runAway()){
-                println("Draven ran away")
-                break
-            }
-            else{
-                draven.takeDamage(80)
-            }
-        }
-        println("=====================================")
-    }
+//    for (i in 1..10){
+//        val draven = VampireKing("Draven")
+//        println(draven)
+//
+//        while(draven.lives > 0) {
+//            if(draven.dodges()){
+//                continue
+//            }
+//            if(draven.runAway()){
+//                println("Draven ran away")
+//                break
+//            }
+//            else{
+//                draven.takeDamage(80)
+//            }
+//        }
+//        println("=====================================")
+//    }
 
 
 //    val conan = Player("Conan")
@@ -55,10 +73,10 @@ fun main(args: Array<String>) {
 //    conan.getLoot(Loot("Fire Potion", LootType.POTION, 25.55))
 //    conan.showInventory()
 
-}
 
 
-fun oldVids(){
+
+fun oldVids() {
 //    println("Hello World!")
 //    println("My next KOTLIN program.")
 //    val bob = "Dracula"
@@ -129,33 +147,33 @@ fun oldVids(){
 //
 //
 
-    for ( i in 0 until 10){
-        println("$i squared is ${i*i}")
+    for (i in 0 until 10) {
+        println("$i squared is ${i * i}")
     }
     println()
-    for ( i in 0..10){
-        println("$i squared is ${i*i}")
+    for (i in 0..10) {
+        println("$i squared is ${i * i}")
     }
     println()
-    for ( i in 10 downTo 0){
-        println("$i squared is ${i*i}")
-    }
-
-    println()
-    for ( i in 10 downTo 0 step 2){
-        println("$i squared is ${i*i}")
+    for (i in 10 downTo 0) {
+        println("$i squared is ${i * i}")
     }
 
     println()
-    for ( i in 3..100){
-        if(i % 3 == 0 && i % 5 == 0){
+    for (i in 10 downTo 0 step 2) {
+        println("$i squared is ${i * i}")
+    }
+
+    println()
+    for (i in 3..100) {
+        if (i % 3 == 0 && i % 5 == 0) {
             println(i)
         }
     }
 
     println()
-    for ( value in 3..100 step 3){
-        if(value % 5 == 0){
+    for (value in 3..100 step 3) {
+        if (value % 5 == 0) {
             println(value)
         }
     }
@@ -167,15 +185,15 @@ fun oldVids(){
     val hill = Player("Hillary", 5)
     hill.show()
 
-    val jen = Player("Jen", 4,0, 8)
+    val jen = Player("Jen", 4, 0, 8)
     jen.show()
 
-    val cass = Player ("Cassandra", 2, 1000,5)
+    val cass = Player("Cassandra", 2, 1000, 5)
     cass.show()
     println(cass.weapon.name.toUpperCase())
     println(cass.weapon.damageInflicted)
 
-    val axe = Weapon ("Axe", 12)
+    val axe = Weapon("Axe", 12)
     jen.weapon = axe
     println(jen.weapon.name)
     println(axe.name)
@@ -184,7 +202,7 @@ fun oldVids(){
 
     println(jen.weapon.damageInflicted)
 
-    hill.weapon = Weapon ("Sword", 10)
+    hill.weapon = Weapon("Sword", 10)
     println(hill.weapon.name)
     cass.weapon = hill.weapon
     cass.show()
@@ -192,7 +210,7 @@ fun oldVids(){
     println(hill.weapon.name)
     hill.show()
 
-    val redPotion = Loot("Red Potion", LootType.POTION,7.50)
+    val redPotion = Loot("Red Potion", LootType.POTION, 7.50)
     hill.getLoot(redPotion)
 
     hill.showInventory()
@@ -205,18 +223,16 @@ fun oldVids(){
     hill.getLoot(Loot("Ring of protection +2", LootType.RING, 40.25))
     hill.getLoot(Loot("Invisibility Potion", LootType.POTION, 35.95))
     hill.showInventory()
-    if( hill.dropLoot(redPotion)){
+    if (hill.dropLoot(redPotion)) {
         hill.showInventory()
-    }
-    else{
+    } else {
         println("You dont have a ${redPotion.name}")
     }
-    val bluePotion = Loot ("Blue Potion", LootType.POTION,6.00)
+    val bluePotion = Loot("Blue Potion", LootType.POTION, 6.00)
 
-    if (hill.dropLoot(bluePotion)){
+    if (hill.dropLoot(bluePotion)) {
         hill.showInventory()
-    }
-    else{
+    } else {
         println("You do not have ${bluePotion.name}")
     }
 
