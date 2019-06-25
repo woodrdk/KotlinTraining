@@ -1,22 +1,22 @@
 fun main(args: Array<String>) {
 
-    val draven = VampireKing("Draven")
-    println(draven)
-    draven.lives = 0
-    do {
-        if (draven.dodges()) {
-            draven.lives +=1
-            continue
-        }
-        if (draven.runAway()) {
-            println("Draven ran away")
-            break
-        } else {
-            draven.takeDamage(80)
-        }
-    }while(draven.lives > 0)
-    println("=====================================")
-}
+//    val draven = VampireKing("Draven")
+//    println(draven)
+//    draven.lives = 0
+//    do {
+//        if (draven.dodges()) {
+//            draven.lives +=1
+//            continue
+//        }
+//        if (draven.runAway()) {
+//            println("Draven ran away")
+//            break
+//        } else {
+//            draven.takeDamage(80)
+//        }
+//    }while(draven.lives > 0)
+//    println("=====================================")
+
 
 //    val enemy = Enemy ("Dracula", 10,3)
 //    println(enemy)
@@ -61,19 +61,34 @@ fun main(args: Array<String>) {
 //    }
 
 
-//    val conan = Player("Conan")
-//    conan.getLoot(Loot("Invisibility", LootType.POTION, 4.0))
-//    conan.getLoot(Loot("Ring of speed", LootType.RING, 3.0))
-//    conan.getLoot(Loot("Cloak ring", LootType.RING, 2.50))
-//    //conan.getLoot(Loot("Red Potion", LootType.POTION, 14.0))
-//    conan.getLoot(Loot("Blue Potion", LootType.POTION, 14.0))
-//    conan.getLoot(Loot("Chest Armor", LootType.ARMOR, 15.0))
-//    conan.getLoot(Loot("Face Armor", LootType.ARMOR, 13.0))
-//    conan.getLoot(Loot("Back Armor", LootType.ARMOR, 12.0))
-//    conan.getLoot(Loot("Fire Potion", LootType.POTION, 25.55))
-//    conan.showInventory()
+    val conan = Player("Conan")
+    conan.getLoot(Loot("Invisibility", LootType.POTION, 4.0))
+    conan.getLoot(Loot("Ring of speed", LootType.RING, 3.0))
+    conan.getLoot(Loot("Cloak ring", LootType.RING, 52.50))
+    conan.getLoot(Loot("Cloak ring", LootType.RING, 52.50))
+    conan.getLoot(Loot("Cloak ring", LootType.RING, 52.50))
+    conan.getLoot(Loot("Red Potion", LootType.POTION, 14.0))
+    conan.getLoot(Loot("Blue Potion", LootType.POTION, 14.0))
+    conan.getLoot(Loot("Chest Armor", LootType.ARMOR, 15.0))
+    conan.getLoot(Loot("Face Armor", LootType.ARMOR, 13.0))
+    conan.getLoot(Loot("Back Armor", LootType.ARMOR, 12.0))
+    conan.getLoot(Loot("Fire Potion", LootType.POTION, 25.55))
+    conan.showInventory()
 
+    conan.dropLoot("Cloak ring")
+    conan.showInventory()
 
+    val dropped = conan.dropLoot("UFOS")
+    println(dropped)
+    println(conan.dropLoot("ETS"))
+    if(conan.dropLoot("CARS")){
+        println("JUNK DROPPED")
+    }
+    else{
+        println("You dont have any junk")
+    }
+
+}
 
 
 fun oldVids() {
