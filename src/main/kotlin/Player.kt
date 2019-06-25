@@ -3,7 +3,7 @@ class Player( val name: String, var level: Int = 1, var score: Int = 0, var live
 
     var weapon: Weapon = Weapon( "Fist" ,1)
 
-    val inventory = ArrayList<Loot>()
+    private val inventory = ArrayList<Loot>()
 
     fun show(){
         if(lives > 0 ){
@@ -22,6 +22,11 @@ class Player( val name: String, var level: Int = 1, var score: Int = 0, var live
             score: $score
             weapon: $weapon
             """
+    }
+
+    fun getLoot(item: Loot){
+        inventory.add(item)
+        // code to save inventory goes here
     }
 
     fun showInventory(){

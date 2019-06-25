@@ -1,5 +1,7 @@
 fun main(args: Array<String>) {
 
+
+
     val rob = Player("Rob")
     rob.show()
 
@@ -32,17 +34,17 @@ fun main(args: Array<String>) {
     hill.show()
 
     val redPotion = Loot("Red Potion", LootType.POTION,7.50)
-    hill.inventory.add(redPotion)
+    hill.getLoot(redPotion)
 
     hill.showInventory()
 
     println(hill)
 
     val chestArmor = Loot("+3 Chest Armor", LootType.ARMOR, 00.00)
-    hill.inventory.add(chestArmor)
+    hill.getLoot(chestArmor)
 
-    hill.inventory.add(Loot("Ring of protection +2", LootType.RING, 40.25))
-    hill.inventory.add(Loot("Invisibility Potion", LootType.POTION, 35.95))
+    hill.getLoot(Loot("Ring of protection +2", LootType.RING, 40.25))
+    hill.getLoot(Loot("Invisibility Potion", LootType.POTION, 35.95))
     hill.showInventory()
 }
 
@@ -117,4 +119,36 @@ fun oldVids(){
 //    println(message)
 //
 //
+
+    for ( i in 0 until 10){
+        println("$i squared is ${i*i}")
+    }
+    println()
+    for ( i in 0..10){
+        println("$i squared is ${i*i}")
+    }
+    println()
+    for ( i in 10 downTo 0){
+        println("$i squared is ${i*i}")
+    }
+
+    println()
+    for ( i in 10 downTo 0 step 2){
+        println("$i squared is ${i*i}")
+    }
+
+    println()
+    for ( i in 3..100){
+        if(i % 3 == 0 && i % 5 == 0){
+            println(i)
+        }
+    }
+
+    println()
+    for ( value in 3..100 step 3){
+        if(value % 5 == 0){
+            println(value)
+        }
+    }
+
 }
