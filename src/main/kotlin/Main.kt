@@ -9,9 +9,25 @@ fun main(args: Array<String>) {
     rob2 = "Rob Wood 2"
 
     println(rob2)
+    println(rob + " " + rob2)
 
     var income: Int = 82
     var monthly: Int = income * 4
     println(income)
     println(monthly)
+
+    println()
+
+    val apples: Int = 6
+    val oranges: Int = 5
+    var fruit: Int = apples + oranges
+    println(fruit)
+    println(apples / 4)
+
+    println()
+    val weeks: Int = 130
+    val years: Double  = weeks / 52.0
+    println("$weeks weeks is $years years")
+    println(years)
+    println("My name is $rob")
 }
