@@ -11,6 +11,11 @@ fun main(args: Array<String>) {
     val hill = Player("Hillary", 5)
     hill.show()
 
+    val jen = Player("Jen", 4,0, 8)
+    jen.show()
+
+    val cass = Player ("Cassandra", 2, 1000,5)
+    cass.show()
 }
 
 
