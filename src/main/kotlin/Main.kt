@@ -9,38 +9,52 @@ fun main(args: Array<String>) {
 //    enemy.takeDamage(11)
 //    println(enemy)
 
-    val uglyTroll = Troll("Ugly Troll")
-    println(uglyTroll)
+//    val uglyTroll = Troll("Ugly Troll")
+//    println(uglyTroll)
+//
+//    uglyTroll.takeDamage(8)
+//    println(uglyTroll)
+//
+//    uglyTroll.takeDamage(30)
+//    println(uglyTroll)
+//
+//    val vlad = Vampire("Vlad")
+//    println(vlad)
+//    vlad.takeDamage(8)
+//    println(vlad)
+//
+    for (i in 1..10){
+        val draven = VampireKing("Draven")
+        println(draven)
 
-    uglyTroll.takeDamage(8)
-    println(uglyTroll)
-
-    uglyTroll.takeDamage(30)
-    println(uglyTroll)
-
-    val vlad = Vampire("Vlad")
-    println(vlad)
-    vlad.takeDamage(8)
-    println(vlad)
-
-    val draven = VampireKing("Draven")
-    println(draven)
-
-    while(draven.lives > 0) {
-        if(draven.dodges()){
-            continue
+        while(draven.lives > 0) {
+            if(draven.dodges()){
+                continue
+            }
+            if(draven.runAway()){
+                println("Draven ran away")
+                break
+            }
+            else{
+                draven.takeDamage(80)
+            }
         }
-        if(draven.runAway()){
-            println("Draven ran away")
-            break
-        }
-        else{
-            draven.takeDamage(20)
-        }
-
-
+        println("=====================================")
     }
-    println(draven)
+
+
+//    val conan = Player("Conan")
+//    conan.getLoot(Loot("Invisibility", LootType.POTION, 4.0))
+//    conan.getLoot(Loot("Ring of speed", LootType.RING, 3.0))
+//    conan.getLoot(Loot("Cloak ring", LootType.RING, 2.50))
+//    //conan.getLoot(Loot("Red Potion", LootType.POTION, 14.0))
+//    conan.getLoot(Loot("Blue Potion", LootType.POTION, 14.0))
+//    conan.getLoot(Loot("Chest Armor", LootType.ARMOR, 15.0))
+//    conan.getLoot(Loot("Face Armor", LootType.ARMOR, 13.0))
+//    conan.getLoot(Loot("Back Armor", LootType.ARMOR, 12.0))
+//    conan.getLoot(Loot("Fire Potion", LootType.POTION, 25.55))
+//    conan.showInventory()
+
 }
 
 

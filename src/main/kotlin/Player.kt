@@ -46,11 +46,15 @@ class Player( val name: String, var level: Int = 1, var score: Int = 0, var live
 
 
     fun showInventory(){
+        var total = 0.00
         println("$name's Inventory")
         for ( item in inventory){
             println(item)
+            total += item.value
         }
         //println(inventory.get(0))
+        println("====================")
+        println("Total value is $total")
         println("====================")
     }
 }
