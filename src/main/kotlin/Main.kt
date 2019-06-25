@@ -25,7 +25,21 @@ fun main(args: Array<String>) {
 
     val draven = VampireKing("Draven")
     println(draven)
-    draven.takeDamage(20)
+
+    while(draven.lives > 0) {
+        if(draven.dodges()){
+            continue
+        }
+        if(draven.runAway()){
+            println("Draven ran away")
+            break
+        }
+        else{
+            draven.takeDamage(20)
+        }
+
+
+    }
     println(draven)
 }
 
