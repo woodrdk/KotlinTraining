@@ -1,11 +1,6 @@
 fun main(args: Array<String>) {
 
     val rob = Player("Rob")
-//    println(rob.name)
-//    println(rob.lives)
-//    println(rob.level)
-//    println(rob.score)
-
     rob.show()
 
     val hill = Player("Hillary", 5)
@@ -16,6 +11,39 @@ fun main(args: Array<String>) {
 
     val cass = Player ("Cassandra", 2, 1000,5)
     cass.show()
+    println(cass.weapon.name.toUpperCase())
+    println(cass.weapon.damageInflicted)
+
+    val axe = Weapon ("Axe", 12)
+    jen.weapon = axe
+    println(jen.weapon.name)
+    println(axe.name)
+    axe.damageInflicted = 24
+    println(axe.damageInflicted)
+
+    println(jen.weapon.damageInflicted)
+
+    hill.weapon = Weapon ("Sword", 10)
+    println(hill.weapon.name)
+    cass.weapon = hill.weapon
+    cass.show()
+    hill.weapon = Weapon("Spear", 14)
+    println(hill.weapon.name)
+    hill.show()
+
+    val redPotion = Loot("Red Potion", LootType.POTION,7.50)
+    hill.inventory.add(redPotion)
+
+    hill.showInventory()
+
+    println(hill)
+
+    val chestArmor = Loot("+3 Chest Armor", LootType.ARMOR, 00.00)
+    hill.inventory.add(chestArmor)
+
+    hill.inventory.add(Loot("Ring of protection +2", LootType.RING, 40.25))
+    hill.inventory.add(Loot("Invisibility Potion", LootType.POTION, 35.95))
+    hill.showInventory()
 }
 
 
