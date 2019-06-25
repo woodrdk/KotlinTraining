@@ -46,6 +46,24 @@ fun main(args: Array<String>) {
     hill.getLoot(Loot("Ring of protection +2", LootType.RING, 40.25))
     hill.getLoot(Loot("Invisibility Potion", LootType.POTION, 35.95))
     hill.showInventory()
+    if( hill.dropLoot(redPotion)){
+        hill.showInventory()
+    }
+    else{
+        println("You dont have a ${redPotion.name}")
+    }
+    val bluePotion = Loot ("Blue Potion", LootType.POTION,6.00)
+
+    if (hill.dropLoot(bluePotion)){
+        hill.showInventory()
+    }
+    else{
+        println("You do not have ${bluePotion.name}")
+    }
+
+    hill.dropLoot("Invisibility Potion")
+    println("============================")
+    hill.showInventory()
 }
 
 

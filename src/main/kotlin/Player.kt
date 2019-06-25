@@ -29,6 +29,22 @@ class Player( val name: String, var level: Int = 1, var score: Int = 0, var live
         // code to save inventory goes here
     }
 
+    fun dropLoot (item: Loot): Boolean{
+        return if(inventory.contains(item)) {
+            inventory.remove(item)
+            true
+        }
+        else{
+            false
+        }
+    }
+
+    fun dropLoot(name: String): Boolean{
+        println("$name will be dropped")
+        return inventory.removeIf{it.name == name}
+    }
+
+
     fun showInventory(){
         println("$name's Inventory")
         for ( item in inventory){
